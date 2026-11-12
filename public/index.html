@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InkSpace | Blog Platform</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">i</span> InkSpace</a>
+    <nav><a href="#home">Home</a><a href="#write">Write</a></nav>
+    <div id="accountArea"><button class="btn btn-outline" id="loginOpen">Log in</button><button class="btn btn-primary" id="registerOpen">Get started</button></div>
+  </header>
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy"><span class="eyebrow">A SPACE FOR YOUR IDEAS</span>
+        <h1>Stories worth<br><em>sharing.</em></h1>
+        <p>Write what matters, discover fresh perspectives, and join conversations that inspire.</p>
+        <a class="btn btn-primary hero-btn" href="#write">Start writing <span>→</span></a>
+      </div>
+      <div class="hero-art"><div class="art-card"><div class="art-top">THE DAILY NOTE <span>✦</span></div><div class="art-lines"></div><div class="art-big">Your<br>next story<br>starts here.</div><div class="art-bottom">IDEAS • PEOPLE • STORIES</div></div><div class="art-orbit"></div></div>
+    </section>
+    <section class="content-section">
+      <div class="section-heading"><div><span class="eyebrow">THE COMMUNITY</span><h2>Latest stories</h2></div><span class="muted" id="postCount">Explore what people are writing</span></div>
+      <div id="posts" class="posts-grid"><div class="empty">Loading stories...</div></div>
+    </section>
+    <section id="write" class="write-banner"><div><span class="eyebrow">HAVE SOMETHING TO SAY?</span><h2>Your voice belongs here.</h2><p>Create a post and start a conversation with the community.</p></div><button class="btn btn-light" id="writeButton">Create a post <span>→</span></button></section>
+  </main>
+  <footer><a class="brand" href="#"><span class="brand-mark">i</span> InkSpace</a><span>Made for curious minds. © 2026 InkSpace</span></footer>
+
+  <div class="modal-backdrop" id="authModal"><div class="modal">
+    <button class="close" data-close="authModal">×</button><span class="eyebrow">WELCOME TO INKSPACE</span><h2 id="authTitle">Log in</h2><p class="muted" id="authSubtitle">Pick up where you left off.</p>
+    <form id="authForm"><label id="nameLabel" class="hidden">Name<input id="name" placeholder="Your name"></label>
+      <label>Email<input id="email" type="email" placeholder="you@example.com" required></label>
+      <label>Password<input id="password" type="password" placeholder="At least 6 characters" required></label>
+      <button class="btn btn-primary full" id="authSubmit">Log in</button></form>
+    <p class="switch-text" id="authSwitch">New here? <button type="button" class="text-button" id="switchAuth">Create an account</button></p>
+  </div></div>
+
+  <div class="modal-backdrop" id="postModal"><div class="modal modal-wide">
+    <button class="close" data-close="postModal">×</button><span class="eyebrow">YOUR CREATIVE SPACE</span><h2 id="postModalTitle">Create a story</h2>
+    <form id="postForm"><label>Title<input id="postTitle" maxlength="120" placeholder="Give your story a title" required></label>
+      <label>Your story<textarea id="postContent" rows="7" placeholder="Start writing..." required></textarea></label>
+      <button class="btn btn-primary full">Publish story</button></form>
+  </div></div>
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body></html>
